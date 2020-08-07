@@ -1,0 +1,16 @@
+{
+  "name": "auth-provider-evaluation",
+  "version": "1.0.0",
+  "description": "Evaluation of authentication providers.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oliver Tigges",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.13.0",
+    "koa-pug": "^4.0.4"
+  }
+}
