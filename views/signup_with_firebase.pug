@@ -1,0 +1,31 @@
+extends layout
+block content
+    div.container
+
+        include _signup_form
+
+    script.
+
+        function sendVerificationEmail(userCredentials) {
+            return userCredentials.user.sendEmailVerification().then(function () {
+                    info("We send you an email to verify your email address.")
+                    window.location.replace("/");
+                }).catch(function (error) {
+                    info("The verification email could not be send: " + error.message, "danger")
+                });
+        }
+
+        document.querySelector("#signup").addEventListener("submit", function (e) {
+            e.preventDefault();
+            let email = this.querySelector("input[name=email]").value;
+            let password = this.querySelector("input[name=password]").value;
+            firebase.auth().createUserWithEmailAndPassword(email, password)
+                .then(sendVerificationEmail)
+                .catch(function (error) {
+                    info("Signup failed: " + error.message, "danger");
+                });
+        });
+
+    include _firebase_config
+
+

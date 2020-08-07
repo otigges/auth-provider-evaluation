@@ -1,0 +1,22 @@
+h1.mt-5 Signup
+
+form#signup.mt-5(autocomplete="off")
+
+    p Thanks for your interest in our site. Please provide your email address and a strong password.
+
+    div#form-feedback
+
+    div.form-group
+        label Username
+        input.form-control(type="email", name="email", maxlength="100", required)
+    div.form-group
+        label Password (at least 8 characters)
+        input.form-control(type="password", name="password", maxlength="100", required)
+    div.form-group
+        button.btn.btn-primary Sign up
+        a.btn.btn-default(href="/") cancel
+
+    div.form-group
+        p You already have an account? Then proceed to&nbsp;
+            a(href="/login") login.
+

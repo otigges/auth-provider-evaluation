@@ -12,3 +12,11 @@ Evaluation of providers for authentication and user management.
     npm start
     
 Visit http://localhost:3000
+
+# Auth Providers
+
+To configure the auth providers, copy the file `.env.template` to `.env` and set the variables accordingly.  
+
+## Google Firebase
+
+

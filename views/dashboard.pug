@@ -1,7 +1,31 @@
-html
-    head
-        title Dashboard with personal information.
-    body
+extends layout
+
+block content
+
+    div.container
+
         h1 Dashboard
 
         p This is your dashboard. Imagine secret information here.
+
+        a(href="#")#logout Logout from this app.
+
+    include _firebase_config
+
+    script.
+
+        document.querySelector("#logout").addEventListener("click", function (e) {
+            firebase.auth().signOut();
+        })
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                console.log("User is signed in: ", user);
+            } else {
+                console.log("User not signed in. Redirecting to login page.");
+                window.location.replace("/login");
+            }
+        });
+
+
+
